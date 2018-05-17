@@ -101,7 +101,7 @@ Eg: Functor[Try], Try can still hold any value
 * Monad
 * sttp library
 
-### What
+
 
 ## Context Bounds
 
