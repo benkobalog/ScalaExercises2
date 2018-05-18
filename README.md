@@ -111,6 +111,7 @@ https://docs.scala-lang.org/tutorials/FAQ/context-bounds.html
 0. Optional: Implement the Retry type class for Try and Future from scratch
 1. Implement a Retry type class instance for non-wrapped types
 2. Variance example: https://coderwall.com/p/dlqvnq/simple-example-for-scala-covariance-contravariance-and-invariance
+3. Try sttp library with 2 different backends(HKT, Type Class): http://sttp.readthedocs.io/en/latest/
 
 #### Good sources
 * [Type related features in Scala](http://ktoso.github.io/scala-types-of-types/)
