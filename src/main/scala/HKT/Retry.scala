@@ -20,7 +20,7 @@ object Retry {
     override def retry[T](times: Int)(a: => Try[T]): Try[T] = {
       a.recoverWith {
         case _ if times > 0 =>
-          println("HKT " + times)
+          println("Retry in Try: " + times)
           retry(times - 1)(a)
       }
     }
@@ -32,7 +32,7 @@ object Retry {
     override def retry[T](times: Int)(a: => Future[T]): Future[T] = {
       a.recoverWith {
         case _ if times > 0 =>
-          println("HKT " + times)
+          println("Retry in Future " + times)
           retry(times - 1)(a)
       }
     }
