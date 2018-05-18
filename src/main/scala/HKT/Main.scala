@@ -1,4 +1,4 @@
-package retry
+package HKT
 
 import Retry._
 

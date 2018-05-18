@@ -1,4 +1,4 @@
-package retry
+package HKT
 import scala.concurrent.Future
 import scala.language.higherKinds
 import scala.util.{Failure, Success, Try}
@@ -20,7 +20,7 @@ object Retry {
     override def retry[T](times: Int)(a: => Try[T]): Try[T] = {
       a.recoverWith {
         case _ if times > 0 =>
-          println("retry " + times)
+          println("HKT " + times)
           retry(times - 1)(a)
       }
     }
@@ -32,7 +32,7 @@ object Retry {
     override def retry[T](times: Int)(a: => Future[T]): Future[T] = {
       a.recoverWith {
         case _ if times > 0 =>
-          println("retry " + times)
+          println("HKT " + times)
           retry(times - 1)(a)
       }
     }

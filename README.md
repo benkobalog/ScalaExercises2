@@ -102,8 +102,8 @@ Eg: Functor[Try], Try can still hold any value
 * sttp library
 
 
-
 ## Context Bounds
+
 
 
 #### Good sources

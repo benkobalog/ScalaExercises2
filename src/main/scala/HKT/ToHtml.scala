@@ -1,4 +1,4 @@
-package retry
+package HKT
 
 trait ToHtml[A] {
   def write(a: A): String
