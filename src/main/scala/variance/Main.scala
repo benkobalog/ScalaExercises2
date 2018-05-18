@@ -11,14 +11,14 @@ object Main {
   private val vehicles: List[Vehicle] = new Vehicle :: cars
 
   def main(args: Array[String]): Unit = {
-    val declBox1 = new DeclarationSiteCovariantBox(vehicles)
-    val declBox2 = new DeclarationSiteCovariantBox(cars)
-    println(declBox2.get)
+    val declBox1 = new DeclarationSiteCovariantBox[Vehicle]
+    val declBox2 = new DeclarationSiteCovariantBox[Car]
+    println(declBox2.retrieve)
 
     isSubtype(declBox2, declBox1)
 
     val useSiteBox1: Box[_ <: Vehicle] = new Box[Vehicle]()
-    val useSiteBox2: Box[_ <: Vehicle] = new Box[Car]()
+    val useSiteBox2: Box[_ <: Car] = new Box[Car]()
 //    softDrinkBox.put(new Opel)
     val car: Vehicle = useSiteBox2.retrieve
     println(car)
@@ -32,9 +32,10 @@ object Main {
   }
 }
 
-class DeclarationSiteCovariantBox[+A <: Vehicle](vehicles: List[A]) {
+class DeclarationSiteCovariantBox[+A <: Vehicle] {
+  private[this] var thing: A = _
 
-  def get: Option[A] = vehicles.headOption
+  def retrieve: A = thing
 
   // This doesn't compile.
 //      def put(vehicle: A) = { // do something }

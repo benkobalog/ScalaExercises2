@@ -106,6 +106,12 @@ Eg: Functor[Try], Try can still hold any value
 https://docs.scala-lang.org/tutorials/FAQ/context-bounds.html
 
 
+## Tasks
+
+0. Optional: Implement the Retry type class for Try and Future from scratch
+1. Implement a Retry type class instance for non-wrapped types
+2. Variance example: https://coderwall.com/p/dlqvnq/simple-example-for-scala-covariance-contravariance-and-invariance
+
 #### Good sources
 * [Type related features in Scala](http://ktoso.github.io/scala-types-of-types/)
 * [Variance1](http://blog.kamkor.me/Covariance-And-Contravariance-In-Scala/)
