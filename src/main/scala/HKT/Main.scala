@@ -25,16 +25,8 @@ object Main {
     println(tryRes)
 
     val futureRes = retry(4)(futureFunction)
-
     // Note: Await.result throws the exception which was in the Future's Failure
     // It transforms the Try semantics inside Future to a result this way.
     println(Try(Await.result(futureRes, 1.second)))
-
-
-    import ToHtml._
-
-    val res = List(toHtml(123), toHtml("aswdas"), toHtml(List(1, 2, 3)))
-
-    println(res)
   }
 }
